@@ -1,14 +1,12 @@
 // This file is organized following the example of the mini-project
-const notes = require('express');
+const notes = require('express').Router();
 const { readFromFile, readAndAppend } = require('../helpers/fsUtils')
 const { v4: uuidv4 } = require('uuid');
 
-// const app = express();
-// import express from 'express'
-const app = express();
+// GET: /api/notes
 
-app.get('/', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/notes.html'))
-);
+notes.get('/', (req, res) => {
+    readFromFile('./db/notes.json').then((data) => res.json(JSON.parse(data)));
+})
 
 module.exports = notes;
