@@ -3,4 +3,4 @@
 ## Description
 
 ## Credits
-The server.js file is adapted from the server.js file found in the module 11 mini-project.
+The server.js, notes.js, fsUtils.js, and index.js files were written following the examples found in the module 11 mini-project.
